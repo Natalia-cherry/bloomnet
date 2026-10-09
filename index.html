@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BloomNet — Friendship Graph</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <p class="eyebrow">BLOOMNET</p>
+      <h1>My Friendship Graph <span>♡</span></h1>
+      <p class="subtitle">A visual social network powered by graph data structures.</p>
+    </div>
+    <button id="resetBtn" class="ghost-btn">Reset demo</button>
+  </header>
+
+  <main class="layout">
+    <section class="card graph-card">
+      <div class="section-head">
+        <div>
+          <h2>Network</h2>
+          <p>Drag a person, then click a node to inspect their relationship.</p>
+        </div>
+        <div class="legend">
+          <span><i class="dot best"></i>Best friend</span>
+          <span><i class="dot sister"></i>Like a sister</span>
+          <span><i class="dot friend"></i>Friend</span>
+        </div>
+      </div>
+      <div id="graphWrap" class="graph-wrap">
+        <svg id="graph" viewBox="0 0 900 560" role="img" aria-label="BloomNet friendship graph"></svg>
+      </div>
+    </section>
+
+    <aside class="side">
+      <section class="card">
+        <h2>Connection finder</h2>
+        <p class="muted">BFS finds the shortest path through the network.</p>
+        <div class="field">
+          <label for="fromSelect">From</label>
+          <select id="fromSelect"></select>
+        </div>
+        <div class="field">
+          <label for="toSelect">To</label>
+          <select id="toSelect"></select>
+        </div>
+        <button id="pathBtn" class="primary-btn">Find shortest connection</button>
+        <div id="pathResult" class="result">Choose two people to explore the graph.</div>
+      </section>
+
+      <section class="card">
+        <h2>Person details</h2>
+        <div id="details" class="details empty">Click a node to see their details.</div>
+      </section>
+
+      <section class="card">
+        <h2>Network analytics</h2>
+        <div class="stats">
+          <div><strong id="peopleCount">0</strong><span>people</span></div>
+          <div><strong id="edgeCount">0</strong><span>connections</span></div>
+          <div><strong id="avgStrength">0</strong><span>avg. strength</span></div>
+          <div><strong id="strongest">—</strong><span>strongest bond</span></div>
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer>BloomNet · Graph theory + data visualization · built as a CS portfolio project</footer>
+  <script src="script.js"></script>
+</body>
+</html>
